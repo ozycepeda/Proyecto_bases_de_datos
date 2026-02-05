@@ -1,0 +1,5 @@
+#la siguiente linea ignora la carpeta data
+/data
+
+#especificamente se puede hacer de la siguiente manera
+*.csv
