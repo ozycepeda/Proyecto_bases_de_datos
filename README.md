@@ -1,4 +1,4 @@
-# Proyecto_bases_de_datos
+# PROYECTO FINAL BASE DE DATOS
 Proyecto final de la materia de Bases de datos. El objetivo es limpiar, depurar y presentar una base de datos de nuestro interés.
 
 # Integrantes
