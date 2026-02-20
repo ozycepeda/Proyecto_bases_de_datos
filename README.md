@@ -6,7 +6,7 @@ El repositorio incluye archivos como movies_metadata.csv, credits.csv, keywords.
 El objetivo del equipo es usar estos datos para analizar patrones de calificación y desarrollar/validar enfoques de recomendación (p. ej., filtrado colaborativo y, si se enlazan metadatos, recomendación basada en contenido).
 Éticamente, aunque los usuarios están anonimizados, las calificaciones reflejan preferencias reales: se debe evitar cualquier intento de reidentificación o cruce con fuentes externas para identificar personas, reportar resultados de forma agregada y reconocer sesgos del dataset (popularidad, usuarios más activos, cobertura desigual por idioma/región), ya que pueden producir recomendaciones que refuercen desigualdades o reduzcan diversidad.
 
-# Integrantes
+# INTEGRANTES
 Alejandro Ozymandias Cepeda Beltran, CU:219451  
 Renata Pasalagua Payá, CU:218650  
 Mariana Rendón Monroy, CU:217225  
