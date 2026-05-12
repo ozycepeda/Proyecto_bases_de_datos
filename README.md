@@ -259,3 +259,35 @@ Se eliminaron casos donde la misma película tenía el mismo género, país, com
 | credits_cast | 562,474 | 562,152 |
 | credits_crew | 464,314 | 464,079 |
 | keywords_keywords | 158,680 | 156,559 |
+
+## Consultas
+
+### Sesgo de Género en la Dirección Cinematográfica
+
+La siguiente query calcula el porcentaje de directores por género en la industria cinematográfica. Se puede observar que los hombres dominan ampliamente la dirección con un 56.13%, mientras que las mujeres representan apenas el 3.88% del total.
+
+```sql
+-- Sesgo de Genero
+-- Porcentaje de directores mujeres vs hombres:
+SELECT 
+    CASE gender 
+        WHEN 1 THEN 'Mujer'
+        WHEN 2 THEN 'Hombre'
+        ELSE 'No especificado'
+    END AS genero,
+    COUNT(*) AS total,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS porcentaje
+FROM core.movie_crew mc
+JOIN core.persons p ON p.person_id = mc.person_id
+WHERE mc.job = 'Director'
+GROUP BY gender
+ORDER BY total DESC;
+```
+
+| genero | total | porcentaje |
+|---|---|---|
+| Hombre | 26,716 | 56.13% |
+| No especificado | 19,029 | 39.98% |
+| Mujer | 1,848 | 3.88% |
+
+Este resultado evidencia un sesgo de género muy pronunciado: por cada directora mujer existen aproximadamente 14 directores hombres. El 39.98% de registros sin género especificado limita el análisis, pero incluso en el escenario más optimista la brecha seguiría siendo significativa. Esto refleja décadas de desigualdad en el acceso de las mujeres a roles de dirección dentro de la industria del cine.
